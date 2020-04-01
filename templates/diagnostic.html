@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Diagnostic{% endblock %}
+
+  {% block content %}    
+
+  <section class="ftco-section form-section" >
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+              
+            <div class="card-body m-auto">
+                <h5 class="card-title text-center">Cochez Oui ou Non</h5>
+                <form action= "{% url 'covid19_diagnostic' quest %}" method="POST">
+                  {% csrf_token %}
+                    <div class="form-group">
+                    <label class=" font- font-weight-bold">{{ question }}</label><br>
+                    {% for field in form %}
+                      <span>{{ field }}</span>
+                      <span>{{ field.label }}</span><br>
+                    {% endfor %}
+                    </div>
+
+                  <div class="form-group">
+                      <input type="submit" value="Suivant" class="btn btn-outline-primary">
+                  </div>
+                  <div class="row justify-content-end">
+                    <span class="btn btn-outline-primary current mb-4">
+                      {{ pagination.number }} Question of {{ pagination.paginator.num_pages }}
+                    </span>
+                  </div>
+                </form>
+              </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+{% endblock content %}
+
+{% block subscribe %} {% endblock %}
+
+
+

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}A propos{% endblock title %}
+
+  {% block content %}
+    
+    <div class="hero-wrap" style="background-image: url({% static 'images/bg_6.jpg' %}); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'covid19_home' %}">Accueil</a></span> <span>About</span></p>
+            <h1 class="mb-3 bread">A propos de cette plate-forme</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section-2">
+      <div class="container-fluid d-flex">
+        <div class="section-2-blocks-wrapper row no-gutters">
+          <div class="img col-sm-12 col-lg-6" style="background-image: url({% static 'images/about.jpg' %});">
+            <a href="https://www.youtube.com/embed/yK4OXj-kt-Q" class="button popup-vimeo"><span class="ion-ios-play"></span></a>
+          </div>
+          <div class="text col-lg-6 ftco-animate">
+            <div class="text-inner align-self-start">
+              <h3>Bienvenue sur COVID-19-OUT</h3>
+              <p><marq>COVID-19-OUT</marq> est une <strong>plate-forme</strong> qui a été créée dans le but de <strong>lutter contre la propagation du coronavirus ‘COVID-19’  en facilitant un diagnostic en ligne rapide et efficace.</strong></p>
+              <p>Nous vous proposons un diagnostic rapide facilité par vos réponses aux questions figurantes sur le formulaire du diagnostic.</p>
+              <p>Après diagnostic, nous vous présentons vos résultats, mais qui sont jusque- là provisoires car nous n’avons  pas les compétences requises pour vous dire à cent pour cent si vous êtes atteints du COVID-19 .Et donc les résultats que nous vous présentons sont estimatifs selon l’évaluation de vos symptômes, néanmoins ces résultats sont indispensables car ils vous communiquent davantage sur votre état de santé, si vous êtes probablement très vulnérable au COVID-19 ou si vous souffrez probablement d’une autre maladie ! </p>
+              <p>Cependant, nous ne vous proposons aucun médicament car nous ne sommes pas habiletés à cela, du moins nous vous recommandons certaines règles et certaines méthodes dans le but d’améliorer votre état de santé.</p>
+              <p>Votre santé, notre priorité !!!!</p>
+              <p>Merci de nous faire confiance !</p>
+              
+            </div>
+            <div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  {% endblock content %}
+  
+

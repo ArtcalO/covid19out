@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="ftco-section form-section" >
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section ftco-animate text-center">
+            
+          <div class="card-body m-auto">
+            <h6 class="card-title text-center"><strong>Si vous n'avez pas de compte, veuillez vous enregistrer pour passer au diagnostic.</strong></h6>
+              <a class="btn btn-outline-primary btn-block btn-login font-weight-bold mb-2 " href="{% url 'covid19_identification' %}" >Enregistrez-vous !</a>
+              <h5 class="card-title text-center pt-5" >Connectez-vous pour passer au diagnostic.</h5>
+              <form method="post" {% if next_p %} action=".?next={{ next_p }}" {% else %} action="." {% endif %}>
+                {% csrf_token %}
+                {% for field in form_connection %}
+                      <div class="form-group">
+                        {{ field }}
+                      </div>
+                {% endfor %}
+                <input type="submit" value="Connexion" class="btn btn-outline-primary btn-block btn-login font-weight-bold mb-2" >
+                
+              </form>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block subscribe %} {% endblock %}

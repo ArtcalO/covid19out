@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+  {% block content %}    
+    <div class="hero-wrap" style="background-image: url( {% static 'images/bg_6.jpg' %}); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'covid19_home' %}">Accueil</a></p>
+            <h1 class="mb-3 bread">Contactez-Nous</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <section class="ftco-section contact-section ftco-degree-bg">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          <div class="col-md-12 mb-4">
+            <h2 class="h4">Nos informations officielles</h2>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-md-3">
+            <p><span>Address:</span><br> Bujumbura-BURUNDI, Bujumbura</p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Phone:</span><br><a href="tel://+257 71 16 20 85">+257 71 16 20 85(Call & Whatsapp)</a><br>
+             <a href="tel://+257 61 64 04 57">+257 61 64 04 57(Call)</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Email:</span><br>
+              <a href="mailto:jehdailegrand12@gmail.com">jehdailegrand12@gmail.com</a>
+              <a href="mailto:niyca14@gmail.com">niyca14@gmail.com</a>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Tweeter</span><br>
+              <a href="#">artcal'O</a><br>
+              <a href="#">@JehdaiG</a>
+            </p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+<section class="ftco-section form-section" >
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section ftco-animate text-center">
+            
+          <div class="card-body m-auto">
+              <h5 class="card-title text-center">Contactez-Nous !</h5>
+              <form action="{% url 'covid19_contact' %}" method="post">
+                {% csrf_token %}
+                {% for field in form_contact %}
+                      <div class="form-group">
+                        {{ field }}
+                      </div>
+                {% endfor %}
+                <input type="submit" name="Envoyer" class="btn btn-outline-primary btn-block btn-login font-weight-bold mb-2" >
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+    {% endblock content %}
+
+{% block subscribe %} {% endblock %}
+
